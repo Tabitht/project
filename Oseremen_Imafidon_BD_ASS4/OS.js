@@ -18,5 +18,5 @@ function formatUptime(uptime) {
     const minutes = Math.floor(uptime % 36000 / 60);
     const seconds = Math.floor(uptime % 60);
 
-    return `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+    return `${days}days ${hours}hours ${minutes}minutes ${seconds}seconds`;
 }
