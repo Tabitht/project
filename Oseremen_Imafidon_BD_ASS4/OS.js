@@ -8,9 +8,9 @@ const uptime = os.uptime();
 const FormattedUptime = formatUptime(uptime)
 const homedir = os.homedir();
 
-file.write(arch);
-file.write(FormattedUptime);
-file.write(homedir);
+file.write(`${arch}\n`);
+file.write(`${FormattedUptime}\n`);
+file.write(`${homedir}\n`);
 
 function formatUptime(uptime) {
     const days = Math.floor(uptime / (3600 * 24));
