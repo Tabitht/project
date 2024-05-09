@@ -1,3 +1,7 @@
 let mix = require('laravel-mix')
 
-mix.copyDirectory('node_modules/bootstrap/dist/', 'public');
+// mix.copy('node_modules/bootstrap/dist/css/bootstrap.css', 'public/css/index.css');
+
+mix.sass('resources/sass/index.scss', 'public/css/app.css')
+    .js('resources/js/index.js', 'public/js')
+    
