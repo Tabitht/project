@@ -17,6 +17,7 @@ Before you begin, ensure you have the following installed on your computer:
 // Creating the blog
 
 import css and javascript locally
+
 import the blog template for the project from bootstrap
 Modify the template to your choice, by taking note of
     -sorting
