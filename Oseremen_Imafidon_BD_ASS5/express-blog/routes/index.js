@@ -26,13 +26,13 @@ router.get('/', function(req, res, next) {
 
   let navigation_link = [...new Set(data.map(post => post.category).sort())]
 
-  let dates = date.map(function(post) {
+  let dates = data.map(function(post) {
     let [year, month] = post.created_at.split('-');
     return new Date( `${year}-${month}-01`);
   });
 
 
-  res.render('blog', {
+  res.render('index', {
     title: 'She Code Queens',
     links: navigation_link,
     posts: data.filter(post => ! post.is_featured),
