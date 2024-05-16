@@ -7,16 +7,17 @@ router.get('/', function(req, res, next) {
   
   let rawdata = fs.readFileSync('./database/posts.json');
 
-  let posts = JSON.parse(rawdata);
+  let data = JSON.parse(rawdata);
 
-  let navigation_link = [...new Set(posts.map(post => post.category))]
+  let navigation_link = [...new Set(data.map(post => post.category).sort())]
 
-  let featuredPosts = posts.filter(post => post.is_featured)
 
   res.render('blog', {
     title: 'She Code Queens',
     links: navigation_link,
-    posts: posts
+    posts: data.filter(post => ! post.is_featured),
+    featuredPosts: data.filter(post => post.is_featured)
+
 });
 
 });
