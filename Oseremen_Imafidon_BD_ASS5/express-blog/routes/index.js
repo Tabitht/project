@@ -29,6 +29,10 @@ router.get('/', function(req, res, next) {
   let dates = data.map(function(post) {
     let [year, month] = post.created_at.split('-');
     return new Date( `${year}-${month}-01`);
+
+    let postSlug = req.params.slug;
+    let blogPost = navigation_link.find(post => post.slug === postSlug);
+    
   });
 
 
