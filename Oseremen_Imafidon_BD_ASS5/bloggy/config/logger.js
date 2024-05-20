@@ -21,7 +21,7 @@ const pad = (num) => {
 
 // create a writestream
 const rotatingFileStream = rfs.createStream(generator, {
-    interval: 'id', 
+    interval: '1d', 
     path: path.join(__dirname, '../storage/logs')
 })
 
